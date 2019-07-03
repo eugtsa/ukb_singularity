@@ -1,0 +1,9 @@
+pandas-plink
+plink
+dask
+pytorch
+xgboost
+seaborn
+scikit-learn
+scipy
+mkl
