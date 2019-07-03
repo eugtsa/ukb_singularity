@@ -8,11 +8,12 @@ From: neurodebian:latest
 
 %files
   ./requirements.txt /requirements.txt
-  ./tools/flashpca /usr/bin/flashpca
+  ./tools/flashpca /flashpca
 
 %post
 
   #Installing all dependencies
+  mv /flashpca /usr/bin/flashpca
   chmod 755 /usr/bin/flashpca
   touch /.condarc
   apt-get update
