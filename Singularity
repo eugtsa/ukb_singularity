@@ -3,7 +3,7 @@ From: neurodebian:latest
 
 %help
 
-    Container with Anaconda 3 (Conda 2019.3) and full ukb environment for Debian 9.x (Stretch).
+    Container with Anaconda 3 (Conda 2019.3) and full ukb environment from neurodebian.
     This installation is based on Python 3.7
 
 %files
