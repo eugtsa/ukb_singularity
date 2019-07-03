@@ -8,11 +8,12 @@ From: neurodebian:latest
 
 %files
   ./requirements.txt /requirements.txt
+  ./tools/flashpca /usr/bin/flashpca
 
 %post
 
   #Installing all dependencies
-
+  chmod 755 /usr/bin/flashpca
   touch /.condarc
   apt-get update
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
