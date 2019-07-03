@@ -28,10 +28,10 @@ From: neurodebian:latest
 
   #Conda configuration of channels from .condarc file
 
-  conda config --file /.condarc --add channels defaults
-  conda config --file /.condarc --add channels conda-forge
-  conda config --file /.condarc --add channels pytorch
-  conda config --file /.condarc --add channels bioconda
+  conda config --add channels defaults
+  conda config --add channels conda-forge
+  conda config --add channels pytorch
+  conda config --add channels bioconda
   conda update conda
 
   #Install environment
