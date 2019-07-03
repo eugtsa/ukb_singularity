@@ -1,5 +1,5 @@
-Bootstrap: library
-From: debian:9
+Bootstrap: docker
+From: neurodebian:latest
 
 %help
 
@@ -14,16 +14,10 @@ From: debian:9
   #Installing all dependencies
 
   touch /.condarc
-  apt-get update && apt-get -y upgrade
-  apt-get -y install \
+  apt-get update
+  DEBIAN_FRONTEND=noninteractive apt-get -yq install \
     build-essential \
     wget \
-    bzip2 \
-    ca-certificates \
-    libglib2.0-0 \
-    libxext6 \
-    libsm6 \
-    libxrender1 \
     git
 
   rm -rf /var/lib/apt/lists/*
