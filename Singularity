@@ -15,7 +15,6 @@ From: neurodebian:latest
   #Installing all dependencies
   mv /flashpca /usr/bin/flashpca
   chmod 755 /usr/bin/flashpca
-  touch /.condarc
   apt-get update
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
     build-essential \
