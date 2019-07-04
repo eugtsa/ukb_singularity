@@ -14,6 +14,7 @@ From: neurodebian:latest
 
   #Installing all dependencies
   mv /flashpca /usr/bin/flashpca
+  mkdir /gpfs
   chmod 755 /usr/bin/flashpca
   apt-get update
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
