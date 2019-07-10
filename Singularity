@@ -30,7 +30,7 @@ From: neurodebian:latest
   wget -c http://s3.amazonaws.com/plink2-assets/plink2_linux_x86_64_20190708.zip
   mkdir /plink
   mv plink2_linux_x86_64_20190708.zip /plink/plink2_linux_x86_64_20190708.zip
-  cd plink && unzip plink2_linux_x86_64_20190708.zip && mv plink2 /usr/bin/plink2
+  cd plink && unzip plink2_linux_x86_64_20190708.zip && mv plink2 /usr/bin/plink2 && cd /
   chmod 755 /usr/bin/plink2
   
   wget -c https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
