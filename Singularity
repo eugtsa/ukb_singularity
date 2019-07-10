@@ -16,6 +16,11 @@ From: neurodebian:latest
   mv /flashpca /usr/bin/flashpca
   mkdir /gpfs
   chmod 755 /usr/bin/flashpca
+  wget http://s3.amazonaws.com/plink2-assets/plink2_linux_x86_64_20190708.zip
+  mkdir /plink
+  mv plink2_linux_x86_64_20190708.zip /plink/plink2_linux_x86_64_20190708.zip
+  cd plink && unzip plink2_linux_x86_64_20190708.zip && mv plink2 /usr/bin/plink2
+  chmod 755 /usr/bin/plink2
   apt-get update
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
     build-essential \
