@@ -21,6 +21,7 @@ From: neurodebian:latest
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
     build-essential \
     wget \
+    unzip \
     git
 
   rm -rf /var/lib/apt/lists/*
