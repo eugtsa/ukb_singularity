@@ -25,6 +25,7 @@ From: neurodebian:latest
     git
 
   rm -rf /var/lib/apt/lists/*
+  
   apt-get clean
 
   wget -c http://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20190821.zip
