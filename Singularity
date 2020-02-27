@@ -28,10 +28,10 @@ From: neurodebian:latest
   
   apt-get clean
 
-  wget -c http://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20190821.zip
+  wget -c http://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20200225.zip
   mkdir /plink
-  mv plink2_linux_avx2_20190821.zip /plink/plink2_linux_avx2_20190821.zip
-  cd plink && unzip plink2_linux_avx2_20190821.zip && mv plink2 /usr/bin/plink2 && cd /
+  mv plink2_linux_avx2_20200225.zip /plink/plink2_linux_avx2_20200225.zip
+  cd plink && unzip plink2_linux_avx2_20200225.zip && mv plink2 /usr/bin/plink2 && cd /
   chmod 755 /usr/bin/plink2
   
   wget -c https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
