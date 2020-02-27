@@ -18,5 +18,4 @@ cloudpickle==1.2.1
 mock==2.0.0
 pylint==2.4.3
 PyYAML==5.1
-scikit_learn==0.21.3
 sshtunnel==0.1.5
