@@ -1,8 +1,8 @@
 pandas-plink
 plink
 dask
-pytorch=1.1.0=py3.7_cuda10.0.130_cudnn7.5.1_0
-py-xgboost-gpu
+pytorch=1.4.0
+xgboost
 seaborn
 scikit-learn
 scipy
