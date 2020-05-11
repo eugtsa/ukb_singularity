@@ -19,3 +19,5 @@ mock
 pylint
 PyYAML
 sshtunnel==0.1.5
+optuna
+plotly
