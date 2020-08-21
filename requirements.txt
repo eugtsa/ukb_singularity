@@ -1,7 +1,7 @@
 pandas-plink
 plink
 dask
-pytorch=1.1.0=py3.7_cuda10.0.130_cudnn7.5.1_0
+pytorch=1.4.0
 xgboost
 seaborn
 scikit-learn
@@ -20,3 +20,5 @@ pylint
 PyYAML
 sshtunnel==0.1.5
 snakemake
+optuna
+plotly
