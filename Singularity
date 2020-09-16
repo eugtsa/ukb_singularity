@@ -48,4 +48,4 @@ From: neurodebian:latest
   #Install environment
    conda install --file requirements.txt
    git clone https://github.com/chrchang/plink-ng.git
-   cd plink-ng/2.0/Python && python setup.py build_ext && pwd && pip install -e .
+   cd plink-ng/2.0/Python && git checkout 6fdbefc0b612fbaefdd78b82140af894fdf742c9 && python setup.py build_ext && pwd && pip install -e .
