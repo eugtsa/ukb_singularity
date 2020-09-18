@@ -17,17 +17,43 @@ From: neurodebian:latest
   mkdir /gpfs
   chmod 755 /usr/bin/flashpca
   
+  # Add repositories for more recent R version
+  # echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" >> /etc/apt/sources.list
+  # apt-key adv --keyserver hkp://keys.gnupg.net:80 --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
+
   apt-get update
+  
   DEBIAN_FRONTEND=noninteractive apt-get -yq install \
     build-essential \
     wget \
     unzip \
-    git
+    git \
+    libxml2-dev \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libgit2-dev \
+    libssh2-1-dev \
+
+  echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" >> /etc/apt/sources.list
+  wget "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xe19f5f87128899b192b1a2c2ad5f960a256a04af" -O jranke.asc
+  apt-key add jranke.asc  
+  apt-get update
+  apt-get -yq install r-base r-base-dev r-recommended
 
   rm -rf /var/lib/apt/lists/*
   
   apt-get clean
+ 
+  git clone https://github.com/facebook/zstd.git
+  cd zstd && make && make install && cd /
+  pwd
 
+  R -e "install.packages(\"devtools\")"
+  R -e "devtools::install_github(\"junyangq/glmnetPlus\")"
+  R -e "devtools::install_github(\"chrchang/plink-ng\", subdir=\"/2.0/cindex\", ref=\"6fdbefc0b612fbaefdd78b82140af894fdf742c9\")"
+  R -e "devtools::install_github(\"chrchang/plink-ng\", subdir=\"/2.0/pgenlibr\", ref=\"6fdbefc0b612fbaefdd78b82140af894fdf742c9\")"
+  R -e "devtools::install_github(\"junyangq/snpnet\")"
+  
   wget -c http://s3.amazonaws.com/plink2-assets/alpha2/plink2_linux_avx2.zip
   mkdir /plink
   mv plink2_linux_avx2.zip /plink/plink2_linux_avx2.zip
@@ -48,4 +74,5 @@ From: neurodebian:latest
   #Install environment
    conda install --file requirements.txt
    git clone https://github.com/chrchang/plink-ng.git
-   cd plink-ng/2.0/Python && git checkout 6fdbefc0b612fbaefdd78b82140af894fdf742c9 && python setup.py build_ext && pwd && pip install -e .
+   cd plink-ng/2.0/Python && git checkout 6fdbefc0b612fbaefdd78b82140af894fdf742c9 && python setup.py build_ext && pwd && pip install -e . 
+
