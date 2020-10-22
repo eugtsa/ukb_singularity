@@ -49,6 +49,7 @@ From: neurodebian:latest
   pwd
 
   R -e "install.packages(\"devtools\")"
+  R -e "install.packages(\"neptune\")"
   R -e "devtools::install_github(\"junyangq/glmnetPlus\")"
   R -e "devtools::install_github(\"chrchang/plink-ng\", subdir=\"/2.0/cindex\", ref=\"6fdbefc0b612fbaefdd78b82140af894fdf742c9\")"
   R -e "devtools::install_github(\"chrchang/plink-ng\", subdir=\"/2.0/pgenlibr\", ref=\"6fdbefc0b612fbaefdd78b82140af894fdf742c9\")"
