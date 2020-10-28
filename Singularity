@@ -34,11 +34,20 @@ From: neurodebian:latest
     libgit2-dev \
     libssh2-1-dev \
 
+  git clone --recursive https://github.com/VowpalWabbit/vowpal_wabbit.git
+  cd vowpal_wabbit
+  apt install -y libboost-dev libboost-thread-dev libboost-program-options-dev libboost-system-dev libboost-math-dev libboost-test-dev zlib1g-dev cmake g++
+  apt install -y libboost-python-dev
+  mkdir build && cd build
+  cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF
+  make install
+  cd ../..
+
   echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" >> /etc/apt/sources.list
   wget "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xe19f5f87128899b192b1a2c2ad5f960a256a04af" -O jranke.asc
   apt-key add jranke.asc  
   apt-get update
-  apt-get -yq install r-base r-base-dev r-recommended
+  apt-get -yq install r-base r-base-dev r-recommended 
 
   rm -rf /var/lib/apt/lists/*
   
