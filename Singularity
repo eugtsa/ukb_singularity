@@ -33,6 +33,7 @@ From: neurodebian:latest
     libcurl4-openssl-dev \
     libgit2-dev \
     libssh2-1-dev \
+    python3-setuptools \
 
   git clone --recursive https://github.com/VowpalWabbit/vowpal_wabbit.git
   cd vowpal_wabbit
