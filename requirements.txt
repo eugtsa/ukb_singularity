@@ -22,3 +22,4 @@ sshtunnel==0.1.5
 snakemake
 optuna
 plotly
+setuptools
